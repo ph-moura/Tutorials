@@ -3,27 +3,26 @@
 ## Install docker
 
 #### Install:
-    On ArchLinux, one can install the docker package as:
-
-    ```bash
+On ArchLinux, one can install the docker package as:
+    ```
     sudo pacman -S docker
     ```
 For other distributions, see https://docs.docker.com/install/
 
 #### Start docker daemon:
-    ```bash
+    ```
     systemctl enable docker.service  # enable start on boot
     systemctl start docker.service
     ```
 
 #### Allow your user to run the docker:
-    ```bash
+    ```
     sudo groupadd docker
     sudo usermod -aG docker $USER
     ```
 
 #### ArchLinux image
-    ```bash
+    ```
     docker run -it -v ~/archlinux-docker:/home/archlinux-user --name myArchLinux -p 8888:8888 --user $(id -u):$(id -g) archlinux
     ```
 
